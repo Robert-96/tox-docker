@@ -10,6 +10,7 @@ RUN apt-get update && \
         libbz2-dev libgdbm-dev libsqlite3-dev libreadline6-dev libncurses5-dev zlib1g-dev liblzma-dev tk-dev
 
 COPY install.sh .
+RUN chmod +x install.sh
 
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
