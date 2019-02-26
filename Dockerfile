@@ -44,7 +44,9 @@ RUN python3.7 -m pip -h
 RUN apt-get install -y \
         jython \
         pypy \
-        pypy3
+        pypy-dev \
+        pypy3 \
+        pypy3-dev
 
 RUN pypy -V
 RUN pypy3 -V
