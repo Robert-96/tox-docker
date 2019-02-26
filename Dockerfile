@@ -51,5 +51,5 @@ RUN pypy3 -V
 RUN jython -V
 
 # Install tox
-RUN python3.7 -m install tox
+RUN python3.7 -m pip install tox
 RUN tox --version
