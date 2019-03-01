@@ -1,4 +1,4 @@
-FROM debian:sid
+FROM debian:scratch
 
 RUN apt-get update && \
     apt-get upgrade -y && \
