@@ -3,18 +3,16 @@
 Docker image for running tox with Python 2.7, 3.4, 3.5, 3.6, 3.7, 3.8, PyPy and PyPy3.
 
 CPython Versions:
+  * `2.7.18`
+  * `3.4.9`
+  * `3.5.9`
+  * `3.6.11`
+  * `3.7.8`
+  * `3.8.5`
 
-* `2.7.18`
-* `3.4.9`
-* `3.5.9`
-* `3.6.11`
-* `3.7.8`
-* `3.8.5`
-
-PyPy `7.3.1`:
-
-* PyPy - Python `2.7`
-* PyPy3 - Python `3.6`
+PyPy Versions:
+  * PyPy `7.3.1` - Python `2.7`
+  * PyPy3 `7.3.1` - Python `3.6`
 
 ## Supported tags and respective `Dockerfile` links
 
