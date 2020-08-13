@@ -43,7 +43,7 @@ RUN python3.4 -V
 RUN python3.4 -m pip -h
 
 # Get Python 3.5
-RUN ./install.sh "3.5.6"
+RUN ./install.sh "3.5.9"
 RUN python3.5 -V
 RUN python3.5 -m pip -V
 
