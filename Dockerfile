@@ -53,7 +53,7 @@ RUN python3.6 -V
 RUN python3.6 -m pip -h
 
 # Get Python 3.7
-RUN ./install.sh "3.7.2"
+RUN ./install.sh "3.7.8"
 RUN python3.7 -V
 RUN python3.7 -m pip -h
 
