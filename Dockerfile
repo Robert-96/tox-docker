@@ -57,6 +57,11 @@ RUN ./install.sh "3.7.8"
 RUN python3.7 -V
 RUN python3.7 -m pip -h
 
+# Get Python 3.8
+RUN ./install.sh "3.8.5"
+RUN python3.8 -V
+RUN python3.8 -m pip -h
+
 # Install tox
-RUN python3.7 -m pip install tox
+RUN python3.8 -m pip install tox
 RUN tox --version
