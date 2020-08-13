@@ -20,7 +20,7 @@ PyPy Versions:
 
 ## How to use this image
 
-This image installs different versions of CPython, PyPy and Jython facilitating running [tox](https://tox.readthedocs.io/en/latest/) on a linux machine.
+This image installs different versions of CPython and PyPy facilitating running [tox](https://tox.readthedocs.io/en/latest/) on a linux machine.
 
 ### Create a `Dockerfile` in your project
 
