@@ -14,6 +14,23 @@ RUN chmod +x install.sh
 
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
+# Get PyPy2
+RUN wget -q -P /tmp https://bitbucket.org/pypy/pypy/downloads/pypy2.7-v7.3.1-linux64.tar.bz2
+RUN tar -x -C /opt -f /tmp/pypy2.7-v7.3.1-linux64.tar.bz2
+RUN rm /tmp/pypy2.7-v7.3.1-linux64.tar.bz2
+RUN mv /opt/pypy2.7-v7.3.1-linux64 /opt/pypy
+RUN ln -s /opt/pypy3/bin/pypy3 /usr/local/bin/pypy
+
+# Get PyPy3
+RUN wget -q -P /tmp https://bitbucket.org/pypy/pypy/downloads/pypy3.6-v7.3.1-linux64.tar.bz2
+RUN tar -x -C /opt -f /tmp/pypy3.6-v7.3.1-linux64.tar.bz2
+RUN rm /tmp/pypy3.6-v7.3.1-linux64.tar.bz2
+RUN mv /opt/pypy3.6-v7.3.1-linux64 /opt/pypy3
+RUN ln -s /opt/pypy3/bin/pypy3 /usr/local/bin/pypy3
+
+RUN pypy -V
+RUN pypy3 -V
+
 # Get Python 2.7
 RUN ./install.sh "2.7.15"
 RUN python2.7 -V
@@ -39,18 +56,6 @@ RUN python3.6 -m pip -h
 RUN ./install.sh "3.7.2"
 RUN python3.7 -V
 RUN python3.7 -m pip -h
-
-# Get Jython and PyPy
-RUN apt-get install -y \
-        jython \
-        pypy \
-        pypy-dev \
-        pypy3 \
-        pypy3-dev
-
-RUN pypy -V
-RUN pypy3 -V
-RUN jython -V
 
 # Install tox
 RUN python3.7 -m pip install tox
