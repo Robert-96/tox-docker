@@ -32,7 +32,7 @@ RUN pypy -V
 RUN pypy3 -V
 
 # Get Python 2.7
-RUN ./install.sh "2.7.15"
+RUN ./install.sh "2.7.18"
 RUN python2.7 -V
 RUN python2.7 get-pip.py
 RUN python2.7 -m pip -h
