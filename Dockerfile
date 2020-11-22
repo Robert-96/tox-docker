@@ -14,22 +14,30 @@ RUN chmod +x install.sh
 
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
-# Get PyPy2
-RUN wget -q -P /tmp https://bitbucket.org/pypy/pypy/downloads/pypy2.7-v7.3.1-linux64.tar.bz2
-RUN tar -x -C /opt -f /tmp/pypy2.7-v7.3.1-linux64.tar.bz2
-RUN rm /tmp/pypy2.7-v7.3.1-linux64.tar.bz2
-RUN mv /opt/pypy2.7-v7.3.1-linux64 /opt/pypy
-RUN ln -s /opt/pypy3/bin/pypy3 /usr/local/bin/pypy
+# Get PyPy
+RUN wget -q -P /tmp https://downloads.python.org/pypy/pypy2.7-v7.3.3-linux64.tar.bz2
+RUN tar -x -C /opt -f /tmp/pypy2.7-v7.3.3-linux64.tar.bz2
+RUN rm /tmp/pypy2.7-v7.3.3-linux64.tar.bz2
+RUN mv /opt/pypy2.7-v7.3.3-linux64 /opt/pypy
+RUN ln -s /opt/pypy/bin/pypy /usr/local/bin/pypy
 
-# Get PyPy3
-RUN wget -q -P /tmp https://bitbucket.org/pypy/pypy/downloads/pypy3.6-v7.3.1-linux64.tar.bz2
-RUN tar -x -C /opt -f /tmp/pypy3.6-v7.3.1-linux64.tar.bz2
-RUN rm /tmp/pypy3.6-v7.3.1-linux64.tar.bz2
-RUN mv /opt/pypy3.6-v7.3.1-linux64 /opt/pypy3
-RUN ln -s /opt/pypy3/bin/pypy3 /usr/local/bin/pypy3
+# Get PyPy3.6
+RUN wget -q -P /tmp https://downloads.python.org/pypy/pypy3.6-v7.3.3-linux64.tar.bz2
+RUN tar -x -C /opt -f /tmp/pypy3.6-v7.3.3-linux64.tar.bz2
+RUN rm /tmp/pypy3.6-v7.3.3-linux64.tar.bz2
+RUN mv /opt/pypy3.6-v7.3.3-linux64 /opt/pypy3.6
+RUN ln -s /opt/pypy3/bin/pypy3 /usr/local/bin/pypy3.6
+
+# Get PyPy3.7
+RUN wget -q -P /tmp https://downloads.python.org/pypy/pypy3.7-v7.3.3-linux64.tar.bz2
+RUN tar -x -C /opt -f /tmp/pypy3.7-v7.3.3-linux64.tar.bz2
+RUN rm /tmp/pypy3.7-v7.3.3-linux64.tar.bz2
+RUN mv /opt/pypy3.7-v7.3.3-linux64 /opt/pypy3.7
+RUN ln -s /opt/pypy3/bin/pypy3 /usr/local/bin/pypy3.7
 
 RUN pypy -V
-RUN pypy3 -V
+RUN pypy3.6 -V 
+RUN pypy3.7 -V
 
 # Get Python 2.7
 RUN ./install.sh "2.7.18"
