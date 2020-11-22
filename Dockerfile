@@ -48,20 +48,25 @@ RUN python3.5 -V
 RUN python3.5 -m pip -V
 
 # Get Python 3.6
-RUN ./install.sh "3.6.11"
+RUN ./install.sh "3.6.12"
 RUN python3.6 -V
 RUN python3.6 -m pip -h
 
 # Get Python 3.7
-RUN ./install.sh "3.7.8"
+RUN ./install.sh "3.7.9"
 RUN python3.7 -V
 RUN python3.7 -m pip -h
 
 # Get Python 3.8
-RUN ./install.sh "3.8.5"
+RUN ./install.sh "3.8.6"
 RUN python3.8 -V
 RUN python3.8 -m pip -h
 
+# Get Python 3.9
+RUN ./install.sh "3.9.0"
+RUN python3.9 -V
+RUN python3.9 -m pip -h
+
 # Install tox
-RUN python3.8 -m pip install tox
+RUN python3.9 -m pip install tox
 RUN tox --version
