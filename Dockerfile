@@ -9,69 +9,53 @@ RUN apt-get update && \
         libncursesw5-dev libc6-dev libpq-dev libffi-dev \
         libbz2-dev libgdbm-dev libsqlite3-dev libreadline6-dev libncurses5-dev zlib1g-dev liblzma-dev tk-dev
 
-COPY install.sh .
-RUN chmod +x install.sh
+COPY install-cpython.sh .
+COPY install-pypy.sh .
+RUN chmod +x install-cpython.sh
+RUN chmod +x install-pypy.sh
 
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
 # Get PyPy
-RUN wget -q -P /tmp https://downloads.python.org/pypy/pypy2.7-v7.3.3-linux64.tar.bz2
-RUN tar -x -C /opt -f /tmp/pypy2.7-v7.3.3-linux64.tar.bz2
-RUN rm /tmp/pypy2.7-v7.3.3-linux64.tar.bz2
-RUN mv /opt/pypy2.7-v7.3.3-linux64 /opt/pypy
-RUN ln -s /opt/pypy/bin/pypy /usr/local/bin/pypy
-
-# Get PyPy3.6
-RUN wget -q -P /tmp https://downloads.python.org/pypy/pypy3.6-v7.3.3-linux64.tar.bz2
-RUN tar -x -C /opt -f /tmp/pypy3.6-v7.3.3-linux64.tar.bz2
-RUN rm /tmp/pypy3.6-v7.3.3-linux64.tar.bz2
-RUN mv /opt/pypy3.6-v7.3.3-linux64 /opt/pypy3.6
-RUN ln -s /opt/pypy3/bin/pypy3 /usr/local/bin/pypy3.6
-
-# Get PyPy3.7
-RUN wget -q -P /tmp https://downloads.python.org/pypy/pypy3.7-v7.3.3-linux64.tar.bz2
-RUN tar -x -C /opt -f /tmp/pypy3.7-v7.3.3-linux64.tar.bz2
-RUN rm /tmp/pypy3.7-v7.3.3-linux64.tar.bz2
-RUN mv /opt/pypy3.7-v7.3.3-linux64 /opt/pypy3.7
-RUN ln -s /opt/pypy3/bin/pypy3 /usr/local/bin/pypy3.7
+RUN ./install-pypy.sh
 
 RUN pypy -V
-RUN pypy3.6 -V 
+RUN pypy3.6 -V
 RUN pypy3.7 -V
 
 # Get Python 2.7
-RUN ./install.sh "2.7.18"
+RUN ./install-cpython.sh "2.7.18"
 RUN python2.7 -V
 RUN python2.7 get-pip.py
 RUN python2.7 -m pip -h
 
 # Get Python 3.4
-RUN ./install.sh "3.4.9"
+RUN ./install-cpython.sh "3.4.9"
 RUN python3.4 -V
 RUN python3.4 -m pip -h
 
 # Get Python 3.5
-RUN ./install.sh "3.5.9"
+RUN ./install-cpython.sh "3.5.9"
 RUN python3.5 -V
 RUN python3.5 -m pip -V
 
 # Get Python 3.6
-RUN ./install.sh "3.6.12"
+RUN ./install-cpython.sh "3.6.12"
 RUN python3.6 -V
 RUN python3.6 -m pip -h
 
 # Get Python 3.7
-RUN ./install.sh "3.7.9"
+RUN ./install-cpython.sh "3.7.9"
 RUN python3.7 -V
 RUN python3.7 -m pip -h
 
 # Get Python 3.8
-RUN ./install.sh "3.8.6"
+RUN ./install-cpython.sh "3.8.6"
 RUN python3.8 -V
 RUN python3.8 -m pip -h
 
 # Get Python 3.9
-RUN ./install.sh "3.9.0"
+RUN ./install-cpython.sh "3.9.0"
 RUN python3.9 -V
 RUN python3.9 -m pip -h
 

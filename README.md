@@ -11,8 +11,10 @@ CPython Versions:
   * `3.8.5`
 
 PyPy Versions:
-  * PyPy `7.3.1` - Python `2.7`
-  * PyPy3 `7.3.1` - Python `3.6`
+  * PyPy `7.3.3` - Python `2.7`
+  * PyPy3 `7.3.3` - Python `3.6`
+  * PyPy3 `7.3.3` - Python `3.7`
+
 
 ## Supported tags and respective `Dockerfile` links
 
