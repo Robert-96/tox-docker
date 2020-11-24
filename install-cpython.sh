@@ -1,3 +1,5 @@
+#!/bin/bash
+
 PYTHON_VERSION=$1
 BASE_URL="https://www.python.org/ftp/python"
 

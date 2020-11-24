@@ -1,20 +1,22 @@
-# Get PyPy
-wget -q -P /tmp https://downloads.python.org/pypy/pypy2.7-v7.3.3-linux64.tar.bz2
-tar -x -C /opt -f /tmp/pypy2.7-v7.3.3-linux64.tar.bz2
-rm /tmp/pypy2.7-v7.3.3-linux64.tar.bz2
-mv /opt/pypy2.7-v7.3.3-linux64 /opt/pypy
-ln -s /opt/pypy/bin/pypy /usr/local/bin/pypy
+#!/bin/bash
 
-# Get PyPy3.6
-wget -q -P /tmp https://downloads.python.org/pypy/pypy3.6-v7.3.3-linux64.tar.bz2
-tar -x -C /opt -f /tmp/pypy3.6-v7.3.3-linux64.tar.bz2
-rm /tmp/pypy3.6-v7.3.3-linux64.tar.bz2
-mv /opt/pypy3.6-v7.3.3-linux64 /opt/pypy3.6
-ln -s /opt/pypy3.6/bin/pypy3 /usr/local/bin/pypy3.6
+PYTHON_VERSION=$1
+PYPY_VERSION=$2
+BASE_URL="https://downloads.python.org/pypy"
 
-# Get PyPy3.7
-wget -q -P /tmp https://downloads.python.org/pypy/pypy3.7-v7.3.3-linux64.tar.bz2
-tar -x -C /opt -f /tmp/pypy3.7-v7.3.3-linux64.tar.bz2
-rm /tmp/pypy3.7-v7.3.3-linux64.tar.bz2
-mv /opt/pypy3.7-v7.3.3-linux64 /opt/pypy3.7
-ln -s /opt/pypy3.7/bin/pypy3 /usr/local/bin/pypy3.7
+echo "Installing PyPy $PYPY_VERSION: Python $PYTHON_VERSION"
+
+file="pypy$PYTHON_VERSION-v$PYPY_VERSION-linux64"
+archive="$file.tar.bz2"
+url="$BASE_URL/$archive"
+
+wget -q -P /tmp $url
+tar -x -C /opt -f "/tmp/$archive"
+rm "/tmp/$archive"
+mv "/opt/$file" "/opt/pypy$PYTHON_VERSION"
+
+if [[ "$PYTHON_VERSION" == "2.7" ]]; then
+    ln -s "/opt/pypy$PYTHON_VERSION/bin/pypy" "/usr/local/bin/pypy"
+else
+    ln -s "/opt/pypy$PYTHON_VERSION/bin/pypy3" "/usr/local/bin/pypy$PYTHON_VERSION"
+fi
