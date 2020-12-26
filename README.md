@@ -31,6 +31,8 @@ This image installs different versions of CPython and PyPy facilitating running 
 FROM robert96/tox
 
 COPY . /app
+WORKDIR /app 
+
 RUN tox
 ```
 
