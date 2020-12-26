@@ -30,5 +30,6 @@ RUN ./install-cpython.sh "3.8.6"
 RUN ./install-cpython.sh "3.9.0"
 
 # Install tox
-RUN python3.9 -m pip install tox
+RUN python3.9 -m pip install --upgrade pip 
+RUN python3.9 -m pip install setuptools wheel tox
 RUN tox --version
