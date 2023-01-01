@@ -13,23 +13,26 @@ RUN apt-get update && \
 COPY install-pypy.sh .
 RUN chmod +x install-pypy.sh
 
-RUN ./install-pypy.sh "2.7" "7.3.3"
-RUN ./install-pypy.sh "3.6" "7.3.3"
-RUN ./install-pypy.sh "3.7" "7.3.3"
+RUN ./install-pypy.sh "2.7" "7.3.11"
+RUN ./install-pypy.sh "3.6" "7.3.11"
+RUN ./install-pypy.sh "3.7" "7.3.11"
 
 # Get CPython
 COPY install-cpython.sh .
 RUN chmod +x install-cpython.sh
 
 RUN ./install-cpython.sh "2.7.18"
-RUN ./install-cpython.sh "3.4.9"
-RUN ./install-cpython.sh "3.5.9"
-RUN ./install-cpython.sh "3.6.12"
-RUN ./install-cpython.sh "3.7.9"
-RUN ./install-cpython.sh "3.8.6"
-RUN ./install-cpython.sh "3.9.0"
+RUN ./install-cpython.sh "3.4.10"
+RUN ./install-cpython.sh "3.5.10"
+RUN ./install-cpython.sh "3.6.15"
+RUN ./install-cpython.sh "3.7.16"
+RUN ./install-cpython.sh "3.8.16"
+RUN ./install-cpython.sh "3.9.16"
+RUN ./install-cpython.sh "3.10.9"
+RUN ./install-cpython.sh "3.11.1"
+RUN ./install-cpython.sh "3.12.0"
 
 # Install tox
-RUN python3.9 -m pip install --upgrade pip 
+RUN python3.9 -m pip install --upgrade pip
 RUN python3.9 -m pip install setuptools wheel tox
 RUN tox --version

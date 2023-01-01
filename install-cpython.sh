@@ -39,7 +39,7 @@ install_cpython() {
     if [[ $PYTHON_VERSION =~ $PYTHON2_REGEX ]]; then
         echo "Installing pip for CPython $PYTHON_VERSION"
 
-        curl --silent https://bootstrap.pypa.io/get-pip.py --output /tmp/get-pip.py
+        curl --silent https://bootstrap.pypa.io/pip/2.7/get-pip.py --output /tmp/get-pip.py
         python2.7 /tmp/get-pip.py &> /dev/null
         python2.7 -m pip --version &> /dev/null
     fi
