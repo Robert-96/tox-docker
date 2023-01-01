@@ -14,8 +14,8 @@ COPY install-pypy.sh .
 RUN chmod +x install-pypy.sh
 
 RUN ./install-pypy.sh "2.7" "7.3.11"
-RUN ./install-pypy.sh "3.6" "7.3.11"
-RUN ./install-pypy.sh "3.7" "7.3.11"
+RUN ./install-pypy.sh "3.8" "7.3.11"
+RUN ./install-pypy.sh "3.9" "7.3.11"
 
 # Get CPython
 COPY install-cpython.sh .
