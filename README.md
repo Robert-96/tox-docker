@@ -20,7 +20,7 @@ PyPy Versions:
 
 ## Supported tags and respective `Dockerfile` links
 
-* [`latest` (Dockerfile)](https://github.com/Robert-96/tox-docker/blob/master/Dockerfile)
+* [`latest` (Dockerfile)](https://github.com/Robert-96/tox-docker/blob/main/Dockerfile)
 
 ## How to use this image
 
@@ -29,7 +29,7 @@ This image installs different versions of CPython and PyPy facilitating running 
 ### Create a `Dockerfile` in your project
 
 ```dockerfile
-FROM robert96/tox
+FROM robert96/tox:latest
 
 COPY . /app
 WORKDIR /app
