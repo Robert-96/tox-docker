@@ -28,7 +28,7 @@ This image installs different versions of CPython and PyPy facilitating running 
 
 ### Create a `Dockerfile` in your project
 
-```
+```dockerfile
 FROM robert96/tox
 
 COPY . /app
