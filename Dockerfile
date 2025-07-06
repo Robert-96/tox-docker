@@ -1,4 +1,4 @@
-FROM debian:stable-slim
+FROM debian:stretch
 
 # For libssl1.0-dev 
 RUN echo "deb http://archive.debian.org/debian-security/ stretch/updates main non-free contrib" | tee -a /etc/apt/sources.list
