@@ -10,15 +10,15 @@ RUN apt-get install -y  \
         libbz2-dev libgdbm-dev libsqlite3-dev libreadline6-dev libncurses5-dev zlib1g-dev liblzma-dev tk-dev
 
 # Install libssl1.0 and libssl1.0-dev
-RUN wget https://snapshot.debian.org/archive/debian-security/20240630T100320Z/pool/updates/main/g/glibc/multiarch-support_2.28-10%2Bdeb10u4_arm64.deb
+RUN wget https://snapshot.debian.org/archive/debian-security/20240630T105336Z/pool/updates/main/g/glibc/multiarch-support_2.28-10%2Bdeb10u4_amd64.deb
 RUN dpkg -i multiarch-support_2.28*.deb
 RUN rm multiarch-support_2.28*.deb
 
-RUN wget https://snapshot.debian.org/archive/debian/20170705T160707Z/pool/main/o/openssl/libssl1.0.0_1.0.2l-1~bpo8%2B1_arm64.deb
+RUN wget https://snapshot.debian.org/archive/debian/20170705T160707Z/pool/main/o/openssl/libssl1.0.0_1.0.2l-1~bpo8%2B1_amd64.deb
 RUN dpkg -i libssl1.0.0_1.0*.deb
 RUN rm libssl1.0.0_1.0*.deb
 
-RUN wget https://snapshot.debian.org/archive/debian/20170705T160707Z/pool/main/o/openssl/libssl-dev_1.0.2l-1~bpo8%2B1_arm64.deb
+RUN wget https://snapshot.debian.org/archive/debian/20170705T160707Z/pool/main/o/openssl/libssl-dev_1.0.2l-1~bpo8%2B1_amd64.deb
 RUN dpkg -i libssl-dev_1.0*.deb
 RUN rm libssl-dev_1.0*.deb
 
