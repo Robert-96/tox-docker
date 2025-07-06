@@ -5,9 +5,13 @@ RUN apt-get upgrade -y
 RUN apt-get install -y  \
         git curl wget make \
         build-essential \
-        openssl libssl1.0-dev \
+        openssl \
         libncursesw5-dev libc6-dev libpq-dev libffi-dev \
         libbz2-dev libgdbm-dev libsqlite3-dev libreadline6-dev libncurses5-dev zlib1g-dev liblzma-dev tk-dev
+
+# Install libssl1.0-dev
+RUN wget http://snapshot.debian.org/archive/debian/20170705T160707Z/pool/main/o/openssl/libssl1.0.0_1.0.2l-1%7Ebpo8%2B1_amd64.deb
+RUN sudo dpkg -i libssl1.0.0*.deb
 
 # Get PyPy
 COPY install-pypy.sh .
