@@ -11,7 +11,7 @@ RUN apt-get install -y  \
 
 # Install libssl1.0-dev
 RUN wget http://snapshot.debian.org/archive/debian/20170705T160707Z/pool/main/o/openssl/libssl1.0.0_1.0.2l-1%7Ebpo8%2B1_amd64.deb
-RUN sudo dpkg -i libssl1.0.0*.deb
+RUN dpkg -i libssl1.0.0*.deb
 
 # Get PyPy
 COPY install-pypy.sh .
