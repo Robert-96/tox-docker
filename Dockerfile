@@ -1,7 +1,7 @@
 FROM debian:stable-slim
 
 # For libssl1.0-dev 
-RUN deb http://archive.debian.org/debian-security stretch/updates main
+RUN echo "deb http://security.debian.org/debian-security stretch/updates main" | sudo tee -a /etc/apt/sources.list
 
 RUN apt-get update && \
     apt-get upgrade -y && \
