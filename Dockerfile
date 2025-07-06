@@ -1,17 +1,13 @@
-FROM debian:buster
+FROM debian:Jessie
 
 RUN apt-get update 
 RUN apt-get upgrade -y
 RUN apt-get install -y  \
         git curl wget make \
         build-essential \
-        openssl \
+        openssl libssl1.0-dev \
         libncursesw5-dev libc6-dev libpq-dev libffi-dev \
         libbz2-dev libgdbm-dev libsqlite3-dev libreadline6-dev libncurses5-dev zlib1g-dev liblzma-dev tk-dev
-
-# Install libssl1.0-dev
-RUN wget https://snapshot.debian.org/archive/debian-security/20220317T093342Z/pool/updates/main/o/openssl1.0/libssl1.0-dev_1.0.2u-1~deb9u7_amd64.deb
-RUN dpkg -i libssl1.0-dev*.deb
 
 # Get PyPy
 COPY install-pypy.sh .
