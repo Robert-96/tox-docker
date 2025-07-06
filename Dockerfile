@@ -4,7 +4,7 @@ FROM debian:stable-slim
 RUN echo "deb http://archive.debian.org/debian-security stretch/updates main non-free contrib" | tee -a /etc/apt/sources.list
 
 RUN apt-get update 
-RUN pt-get upgrade -y
+RUN apt-get upgrade -y
 RUN apt-get install -y  \
         git curl wget make \
         build-essential \
