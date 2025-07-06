@@ -10,8 +10,8 @@ RUN apt-get install -y  \
         libbz2-dev libgdbm-dev libsqlite3-dev libreadline6-dev libncurses5-dev zlib1g-dev liblzma-dev tk-dev
 
 # Install libssl1.0-dev
-RUN wget http://snapshot.debian.org/archive/debian/20170705T160707Z/pool/main/o/openssl/libssl1.0.0_1.0.2l-1%7Ebpo8%2B1_amd64.deb
-RUN dpkg -i libssl1.0.0*.deb
+RUN wget https://snapshot.debian.org/archive/debian-security/20220317T093342Z/pool/updates/main/o/openssl1.0/libssl1.0-dev_1.0.2u-1~deb9u7_amd64.deb
+RUN dpkg -i libssl1.0-dev*.deb
 
 # Get PyPy
 COPY install-pypy.sh .
