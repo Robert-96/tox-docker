@@ -1,7 +1,4 @@
-FROM debian:stretch
-
-# For libssl1.0-dev 
-RUN echo "deb http://archive.debian.org/debian-security/ stretch main non-free contrib" | tee -a /etc/apt/sources.list
+FROM debian:bullseye
 
 RUN apt-get update 
 RUN apt-get upgrade -y
